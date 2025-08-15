@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' transform='translate(5, 0)'>U</text></svg>"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unilomio Journey Showcase</title>
 
@@ -530,42 +535,11 @@
           </div>
         </div>
         <div class="timeline-horizontal p-6 max-w-6xl mx-auto mt-16">
-          <div class="timeline-event" onclick="openModal('event-1')">
-            <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">
-              July 27, 2025
-            </h3>
-            <p class="text-sm text-[var(--text-color)] italic">
-              Started coding and the Unilomio journey began!
-            </p>
-          </div>
+          <div class="timeline-event" onclick="openModal('event-1')"></div>
 
-          <div class="timeline-event" onclick="openModal('event-2')">
-            <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">
-              Smooth Scroll Plugin
-            </h3>
-            <span
-              class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2"
-              style="background-color: var(--tag-ui-bg)"
-              >UI Effects</span
-            >
-            <p class="text-sm text-[var(--text-color)] italic">
-              Modern scrolling experience
-            </p>
-          </div>
+          <div class="timeline-event" onclick="openModal('event-2')"></div>
 
-          <div class="timeline-event" onclick="openModal('event-3')">
-            <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">
-              Affiliate Banner Plugin
-            </h3>
-            <span
-              class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2"
-              style="background-color: var(--tag-monetization-bg)"
-              >Monetization</span
-            >
-            <p class="text-sm text-[var(--text-color)] italic">
-              Easy affiliate management
-            </p>
-          </div>
+          <div class="timeline-event" onclick="openModal('event-3')"></div>
         </div>
 
         <div id="timeline-nav" class="flex justify-center mt-8 gap-3"></div>
@@ -596,7 +570,7 @@
           <span
             class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
             style="background-color: var(--tag-tech-bg)"
-            >Vanilla JavaScript</span
+            >Node.js</span
           >
           <span
             class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
@@ -616,17 +590,52 @@
           <span
             class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
             style="background-color: var(--tag-tech-bg)"
-            >Git</span
+            >React</span
           >
           <span
             class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
             style="background-color: var(--tag-tech-bg)"
-            >GitHub Pages</span
+            >Typescript</span
           >
           <span
             class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
             style="background-color: var(--tag-tech-bg)"
-            >Gemini API</span
+            >Javascript</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Node.js</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Next.js</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Python</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Framer UI</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >PostgreSQL</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Firebase</span
+          >
+          <span
+            class="text-white px-4 py-2 rounded-full font-semibold text-lg glow-hover"
+            style="background-color: var(--tag-tech-bg)"
+            >Supabase</span
           >
         </div>
       </section>
@@ -664,14 +673,18 @@
             "
           >
             <h3 class="text-3xl font-semibold mb-4 text-[var(--heading-color)]">
-              Why My Repositories Are Private
+              The Purpose of My Github Showcase
             </h3>
             <p class="text-lg text-[var(--text-color)]">
               As a solo founder, the plugins I create are the core intellectual
-              property of my business. To protect the value and sustainability
-              of Unilomio, the source code remains private. This showcase,
-              however, serves as my public portfolio to demonstrate my skills
-              and commitment, while protecting the core assets of my business.
+              property of my business. My plugins are super-economical, starting
+              at just $29 (and I give some of them away for free). To protect
+              the value and sustainability of Unilomio, the source code and my
+              repositories remain private. The free plugins are dispatched as
+              zip bundles to those who request for them. This helps me keep
+              track of who's using the plugins. This showcase, however, serves
+              as my public portfolio to demonstrate my skills and commitment,
+              while protecting the core assets of my business.
             </p>
           </div>
         </div>
@@ -705,37 +718,52 @@
     <script>
       const pluginData = {
         'event-1': {
-          title: 'Unilomio Journey Began',
-          category: 'Mission',
+          title: 'Unilomio by Rashika - Starts July 2025',
+          category: 'Plugin Registry',
           date: 'July 27, 2025',
           imageSrc:
-            'https://placehold.co/400x200/58a6ff/ffffff?text=The+Beginning',
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1755261689/UniliomioApp-Github-01_x5hkjb.png',
           problem:
-            'This event marks the beginning of my mission to create zero-bloat plugins to help financially struggling founders thrive. It is the core motivation behind the Unilomio project.',
-          techStack: ['HTML5', 'CSS3', 'Vision & Commitment'],
+            'July 2025 saw the dawn of my mission to create Unilomio App, a registry of zero-bloat plugins. Adding beauty, value, and profit to web applications at super-affordable costs, is the core motivation behind the Unilomio project. Unilomio App has 12 plugins live now, with six more under development and testing. The end result is to have 100 plugins across five categories.',
+          techStack: [
+            'Node.js',
+            'React Javascript',
+            'React Typescript',
+            'HTML5',
+            'CSS3',
+            'Firebase',
+            'Vision & Commitment',
+          ],
           link: 'https://app.unilomio.in',
         },
         'event-2': {
-          title: 'Smooth Scroll Plugin',
-          category: 'UI Effects',
+          title: 'HelioCRM - Aug 2025',
+          category: 'CRM',
           date: 'August 5, 2025',
           imageSrc:
             'https://placehold.co/400x200/58a6ff/ffffff?text=GIF+of+Smooth+Scroll',
           problem:
-            'This plugin provides a modern, user-friendly scrolling experience, enhancing site aesthetics and improving navigation without any of the typical library bloat. It solves the problem of clunky, default browser scrolling.',
-          techStack: ['Vanilla JavaScript', 'CSS Animations'],
-          link: 'https://app.unilomio.in',
+            'A lightweight fully secure, internal CRM application, that connects and runs with your data. Each deployment and instance is fully private with no risk of data leak. Ready. Rad. Yours.  ',
+          techStack: [
+            'JavaScript',
+            'HTML5',
+            'Tailwind',
+            'Firebase',
+            'Google Sheets',
+            'CSS3',
+          ],
+          link: 'https://heliocrm.unilomio.in',
         },
         'event-3': {
-          title: 'Affiliate Banner Plugin',
-          category: 'Monetization',
+          title: 'SaaS Landing Page for CloudSync Pro - Aug 2025',
+          category: 'Quirkity',
           date: 'August 15, 2025',
           imageSrc:
-            'https://placehold.co/400x200/2d8f2d/ffffff?text=GIF+of+Affiliate+Banner',
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1755084237/CloudSync_Pro_-_Full_kdcthl.png',
           problem:
-            'This tool helps founders easily add and manage dynamic affiliate banners on their site, creating a new revenue stream with minimal effort and no third-party scripts. It provides a simple, direct path to monetization.',
-          techStack: ['HTML Templates', 'JavaScript'],
-          link: 'https://app.unilomio.in',
+            'This was a project I did as part of my Digital Assets brand, Quirkity. A landing page created for Cloudsync Pro in under 24 hours.',
+          techStack: ['React Typescript', 'Tailwind'],
+          link: 'https://drive.google.com/drive/u/1/folders/1QSsozESTBvLO4r0yaMnlzHsfCpRZ4v5r',
         },
       };
 
@@ -1053,14 +1081,14 @@
                 <p class="text-sm mt-2" style="color: var(--secondary-text-color);">${data.date}</p>
                 <img src="${data.imageSrc}" alt="Plugin demonstration" class="w-full h-auto rounded-md mt-4 shadow-lg">
                 <div class="mt-4 text-left">
-                    <p class="text-lg font-semibold" style="color: var(--heading-color);">Problem it Solves:</p>
+                    <p class="text-lg font-semibold" style="color: var(--heading-color);">About the Project:</p>
                     <p class="text-[var(--text-color)]">${data.problem}</p>
-                    <p class="text-lg font-semibold mt-4" style="color: var(--heading-color);">Tech Stack:</p>
+                    <p class="text-lg font-semibold mt-4" style="color: var(--heading-color);">What did I arm myself with?</p>
                     <div class="flex flex-wrap gap-2 mt-2">
                         ${techStackHtml}
                     </div>
                     <a href="${data.link}" target="_blank" class="mt-6 inline-block font-semibold text-xl hover:underline glow-hover" style="color: var(--link-color);">
-                        See it live on the app »
+                        Check it out here »
                     </a>
                 </div>
             `;
@@ -1108,9 +1136,9 @@
 
       function getCategoryColor(category) {
         const colors = {
-          Mission: 'var(--tag-monetization-bg)',
-          'UI Effects': 'var(--tag-ui-bg)',
-          Monetization: 'var(--tag-monetization-bg)',
+          'Plugin Registry': 'var(--tag-monetization-bg)',
+          CRM: 'var(--tag-ui-bg)',
+          Quirkity: 'var(--tag-monetization-bg)',
           Tech: 'var(--tag-tech-bg)',
         };
         return colors[category] || 'var(--tag-ui-bg)';
