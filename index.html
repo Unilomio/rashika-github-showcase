@@ -3,154 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unilomio Journey Showcase</title>
-    <!-- Tailwind CSS CDN for easy styling -->
+    <title>Starlit Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS for the glassy effect and the timeline */
+        /* General body styling for the background and font */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            overflow-x: hidden; /* Prevents horizontal scrolling */
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrollbars from showing up */
+            height: 100vh;
         }
-        .glassy-nav {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background-color: rgba(22, 27, 34, 0.5);
-        }
-        .timeline-line {
-            position: absolute;
-            top: 50%;
+
+        /* Canvas for the star animation. It's positioned to fill the screen behind everything */
+        #star-canvas {
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #30363d;
-            z-index: -1;
+            width: 100%;
+            height: 100%;
+            z-index: -20;
         }
-        .timeline-event::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #58a6ff;
-            border: 2px solid #0d1117;
-            transition: all 0.3s ease;
+        
+        /* Container for the hero background image */
+        .hero-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
         }
-        .timeline-event:hover::before {
-            transform: translate(-50%, -50%) scale(1.5);
-            box-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff;
+
+        /* The actual hero content, positioned above the image and stars */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 1rem;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body>
 
-    <!-- Glassy Navigation Bar -->
-    <header class="glassy-nav fixed top-0 w-full z-50 p-4 border-b border-gray-700 shadow-lg">
-        <nav class="flex justify-center items-center space-x-6">
-            <a href="#hero" class="text-xl font-bold hover:text-blue-400 transition-colors">Home</a>
-            <a href="#journey" class="text-xl font-bold hover:text-blue-400 transition-colors">Journey</a>
-            <a href="#about" class="text-xl font-bold hover:text-blue-400 transition-colors">About</a>
-        </nav>
-    </header>
+    <!-- Canvas for the star animation -->
+    <canvas id="star-canvas"></canvas>
 
-    <main class="container mx-auto px-4 py-8">
-        
-        <!-- Hero Section - Your Personal Introduction -->
-        <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center pt-24">
-            <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight">The Unilomio Journey</h1>
-            <p class="mt-4 text-xl md:text-2xl max-w-2xl text-gray-400">
-                A visual timeline of a solo founder's commitment to building zero-bloat plugins, one contribution at a time.
-            </p>
-            <a href="#journey" class="mt-8 px-8 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-600 transition-colors">
-                Explore the Journey
-            </a>
-        </section>
+    <!-- Hero background image container -->
+    <div class="hero-image-container">
+        <!-- Placeholder image. You can replace the src with your own image URL -->
+        <img src="https://placehold.co/1920x1080/000/fff?text=Hero+Image" alt="Hero Background" class="w-full h-full object-cover opacity-70">
+    </div>
 
-        <!-- The "Rad Sleep Stylist" Timeline Section -->
-        <section id="journey" class="py-20 relative">
-            <h2 class="text-5xl font-bold text-center mb-16 text-blue-400">My Plugin Journey</h2>
-            
-            <!-- The horizontal glowing line for the timeline -->
-            <div class="timeline-line"></div>
-            
-            <!-- Timeline events container -->
-            <div class="flex flex-col md:flex-row justify-center items-center relative">
-                
-                <!-- Timeline Event 1: Starting the journey -->
-                <div class="timeline-event relative flex-1 flex flex-col items-center p-6 md:p-8 w-full md:w-auto">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-full transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-center">
-                            <h3 class="text-2xl font-bold text-blue-300">July 27, 2025</h3>
-                            <p class="text-gray-400 mt-2">Started coding and the Unilomio journey began!</p>
-                            <p class="text-sm mt-4 italic text-gray-500">
-                                This marked the beginning of my mission to create zero-bloat tools for founders.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Event 2: First set of plugins -->
-                <div class="timeline-event relative flex-1 flex flex-col items-center p-6 md:p-8 w-full md:w-auto">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-full transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-center">
-                            <h3 class="text-2xl font-bold text-blue-300">August 5, 2025</h3>
-                            <p class="text-gray-400 mt-2">Released 5 new UI effect plugins.</p>
-                            <p class="text-sm mt-4 italic text-gray-500">
-                                Empowered e-commerce sites with custom animations and user-friendly interfaces.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline Event 3: Monetization focus -->
-                <div class="timeline-event relative flex-1 flex flex-col items-center p-6 md:p-8 w-full md:w-auto">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 w-full transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-center">
-                            <h3 class="text-2xl font-bold text-blue-300">August 15, 2025</h3>
-                            <p class="text-gray-400 mt-2">Launched a new profitizing plugin.</p>
-                            <p class="text-sm mt-4 italic text-gray-500">
-                                A game-changer for financially struggling founders to boost revenue.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more timeline events here! -->
-                
-            </div>
-        </section>
-
-        <!-- About and Why Repos are Private Section -->
-        <section id="about" class="py-20">
-            <h2 class="text-5xl font-bold text-center mb-16 text-blue-400">About Unilomio & My Mission</h2>
-            <div class="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 md:w-1/2">
-                    <h3 class="text-3xl font-semibold mb-4">The Unilomio Vision</h3>
-                    <p class="text-lg text-gray-300">
-                        Unilomio is my world, a place where I build powerful, lightweight plugins to help other financially struggling founders thrive. The goal is to provide enterprise-level functionality without the enterprise price tag or bloat, making awesome web customizations and profitizing tools accessible to everyone.
-                    </p>
-                </div>
-                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 md:w-1/2">
-                    <h3 class="text-3xl font-semibold mb-4">Why My Repositories Are Private</h3>
-                    <p class="text-lg text-gray-300">
-                        As a solo founder, the plugins I create are the core intellectual property of my business. To protect the value and sustainability of Unilomio, the source code remains private. This showcase, however, serves as my public portfolio to demonstrate my skills and commitment, while protecting the core assets of my business.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gray-900 text-center py-6 border-t border-gray-800 mt-12">
-        <p class="text-sm text-gray-500">
-            Built with ❤️ by Rashika | Unilomio.
+    <!-- The main hero text content -->
+    <div class="hero-content">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to the Stars!</h1>
+        <p class="text-lg md:text-xl max-w-2xl px-4">
+            This is your safe space. Take a deep breath and relax under the infinite night sky.
         </p>
-    </footer>
+    </div>
 
+    <script>
+        /**
+         * This script handles the canvas animation for the star background.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('star-canvas');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+            let animationFrameId;
+
+            // Function to resize the canvas and regenerate stars
+            const resizeCanvas = () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                stars = [];
+                // Create a new set of stars
+                for (let i = 0; i < 500; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 1.5,
+                        speed: Math.random() * 0.5 + 0.1,
+                        opacity: Math.random(),
+                        direction: Math.random() * 2 * Math.PI,
+                    });
+                }
+            };
+
+            // Function to draw each star on the canvas
+            const drawStars = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#FFFFFF';
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                    ctx.fill();
+                });
+            };
+
+            // Function to update the position of each star for the animation
+            const updateStars = () => {
+                stars.forEach(star => {
+                    star.x += star.speed * Math.cos(star.direction);
+                    star.y += star.speed * Math.sin(star.direction);
+
+                    // Wrap stars around the screen so they don't disappear
+                    if (star.x < 0) star.x = canvas.width;
+                    if (star.x > canvas.width) star.x = 0;
+                    if (star.y < 0) star.y = canvas.height;
+                    if (star.y > canvas.height) star.y = 0;
+                });
+            };
+
+            // Main animation loop
+            const animate = () => {
+                updateStars();
+                drawStars();
+                animationFrameId = requestAnimationFrame(animate);
+            };
+
+            // Event listener for window resizing
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Initial setup on page load
+            resizeCanvas(); 
+            animate();
+
+            // Cleanup function for when the component is unmounted (not needed here but good practice)
+            return () => {
+                window.removeEventListener('resize', resizeCanvas);
+                cancelAnimationFrame(animationFrameId);
+            };
+        });
+    </script>
 </body>
 </html>
