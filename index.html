@@ -117,7 +117,7 @@
         background-color: var(--nav-bg);
         border-bottom: 1px solid var(--border-color);
       }
-      /* Horizontal Timeline with Big Dots */
+
       .timeline-horizontal {
         display: flex;
         align-items: center;
@@ -129,7 +129,6 @@
         gap: 20px;
       }
 
-      /* Connecting line across timeline */
       .timeline-horizontal::before {
         content: '';
         position: absolute;
@@ -146,7 +145,6 @@
         transform: translateY(-50%);
       }
 
-      /* Plugin event cards */
       .timeline-horizontal .timeline-event {
         position: relative;
         background: var(--card-bg-color);
@@ -154,8 +152,10 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         text-align: center;
-        flex: 0 0 280px; /* Fixed card width */
-        min-height: 200px; /* Fixed height */
+        flex: 0 0 280px !important;
+        height: 240px !important;
+        flex: 0 0 280px;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -166,13 +166,12 @@
         border: 1px solid var(--border-color);
       }
 
-      /* Big dot markers */
       .timeline-horizontal .timeline-event::before {
         content: '';
         position: absolute;
         top: -20px;
         left: 50%;
-        width: 32px; /* Big dot size */
+        width: 32px;
         height: 32px;
         background: var(--heading-color);
         border-radius: 50%;
@@ -183,7 +182,6 @@
         box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
       }
 
-      /* Hover effects */
       .timeline-horizontal .timeline-event:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -194,35 +192,30 @@
         box-shadow: 0 0 20px rgba(88, 166, 255, 0.6);
       }
 
-      /* Mobile responsiveness */
       @media (max-width: 768px) {
-        /* 1 – stack cards */
         .timeline-horizontal {
-          flex-direction: column; /* vertical */
-          align-items: flex-start; /* left-align */
-          gap: 30px; /* space between cards */
-          overflow-x: visible; /* no horizontal scroll */
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+          overflow-x: visible;
         }
 
-        /* 2 – hide the horizontal line */
         .timeline-horizontal::before {
           display: none;
         }
 
-        /* 3 – re-position the big dots to the left of each card */
         .timeline-horizontal .timeline-event {
-          flex: 1 1 100%; /* full width */
+          flex: 1 1 100%;
           min-height: 180px;
-          padding-left: 60px; /* room for the dot */
+          padding-left: 60px;
         }
         .timeline-horizontal .timeline-event::before {
-          top: 15px; /* align with title */
-          left: 0; /* flush left */
-          transform: none; /* no centering */
+          top: 15px;
+          left: 0;
+          transform: none;
         }
       }
 
-      /* Smooth scrollbar styling */
       .timeline-horizontal::-webkit-scrollbar {
         height: 8px;
       }
@@ -231,7 +224,25 @@
         background-color: var(--heading-color);
         border-radius: 10px;
       }
+      .timeline-horizontal .timeline-event h3 {
+        flex-shrink: 0;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
 
+      .timeline-horizontal .timeline-event p {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 0.5rem;
+      }
+
+      .timeline-horizontal .timeline-event span {
+        flex-shrink: 0;
+        margin-top: 0.5rem;
+      }
       .modal-overlay {
         display: none;
         position: fixed;
@@ -358,43 +369,39 @@
         box-shadow: 0 0 20px 5px rgba(88, 166, 255, 0.3);
         transition: box-shadow 0.3s ease-in-out;
       }
-      /* Fixed size plugin cards with text overflow handling */
+
       .timeline-event > div {
-        width: 320px !important; /* Fixed width */
-        height: 380px !important; /* Fixed height */
+        width: 320px !important;
+        height: 380px !important;
         min-height: 380px;
         max-height: 380px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Distribute content evenly */
+        justify-content: space-between;
       }
 
-      /* Title stays at top - never truncated */
       .timeline-event h3 {
-        flex-shrink: 0; /* Don't shrink title */
+        flex-shrink: 0;
         margin-bottom: 1rem;
         line-height: 1.2;
       }
 
-      /* Description text with smart truncation */
       .timeline-event p {
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 4; /* Limit to 4 lines */
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         line-height: 1.4;
         margin: 0.5rem 0;
-        flex-grow: 1; /* Take available space */
+        flex-grow: 1;
       }
 
-      /* Category tags stay at bottom */
       .timeline-event span {
-        flex-shrink: 0; /* Don't shrink tags */
+        flex-shrink: 0;
         margin-top: auto;
       }
 
-      /* Responsive: Stack nicely on mobile */
       @media (max-width: 768px) {
         .timeline-event > div {
           width: 100% !important;
@@ -404,7 +411,7 @@
         }
 
         .timeline-event p {
-          -webkit-line-clamp: 3; /* Fewer lines on mobile */
+          -webkit-line-clamp: 3;
         }
       }
     </style>
@@ -500,7 +507,9 @@
           </div>
           <div class="text-center">
             <div id="plugin-counter" class="stats-counter">0</div>
-            <p class="text-[var(--secondary-text-color)]">Plugins Created</p>
+            <p class="text-[var(--secondary-text-color)]">
+              Plugins / Apps Created
+            </p>
           </div>
         </div>
       </section>
@@ -525,7 +534,7 @@
             (Since July 25, 2025)
           </p>
           <div
-            class="p-6 rounded-lg shadow-xl border"
+            class="p-6 rounded-lg shadow-xl border flex justify-center items-center"
             style="
               background-color: var(--card-bg-color);
               border-color: var(--border-color);
@@ -718,7 +727,7 @@
     <script>
       const pluginData = {
         'event-1': {
-          title: 'Unilomio by Rashika - Starts July 2025',
+          title: 'Unilomio by Rashika',
           category: 'Plugin Registry',
           date: 'July 27, 2025',
           imageSrc:
@@ -737,11 +746,11 @@
           link: 'https://app.unilomio.in',
         },
         'event-2': {
-          title: 'HelioCRM - Aug 2025',
+          title: 'HelioCRM',
           category: 'CRM',
           date: 'August 5, 2025',
           imageSrc:
-            'https://placehold.co/400x200/58a6ff/ffffff?text=GIF+of+Smooth+Scroll',
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1754747109/3_o243kr.png',
           problem:
             'A lightweight fully secure, internal CRM application, that connects and runs with your data. Each deployment and instance is fully private with no risk of data leak. Ready. Rad. Yours.  ',
           techStack: [
@@ -755,7 +764,7 @@
           link: 'https://heliocrm.unilomio.in',
         },
         'event-3': {
-          title: 'SaaS Landing Page for CloudSync Pro - Aug 2025',
+          title: 'CloudSync Pro',
           category: 'Quirkity',
           date: 'August 15, 2025',
           imageSrc:
@@ -786,6 +795,68 @@
             });
           });
         },
+
+        getPluginsCumulative: function () {
+          const pluginDates = [
+            { date: new Date('2025-07-27'), name: 'CardFlip' },
+            { date: new Date('2025-07-28'), name: 'TextFlip' },
+            { date: new Date('2025-08-29'), name: 'ChaChing' },
+            { date: new Date('2025-07-30'), name: 'HeroFlex' },
+            { date: new Date('2025-08-01'), name: 'AeroNav' },
+            { date: new Date('2025-08-02'), name: 'Themerise' },
+            { date: new Date('2025-08-03'), name: 'FeatrFlo' },
+            { date: new Date('2025-08-04'), name: 'ShowZY' },
+            { date: new Date('2025-08-05'), name: 'HelioCRM' },
+            { date: new Date('2025-08-06'), name: 'TrustBadge' },
+            { date: new Date('2025-08-08'), name: 'BaseGlow' },
+            { date: new Date('2025-08-09'), name: 'FluidNavHTML' },
+            { date: new Date('2025-08-10'), name: 'MintZoom' },
+            { date: new Date('2025-08-12'), name: 'FluidNavReact' },
+            { date: new Date('2025-08-13'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-15'), name: 'CloudSync Pro' },
+          ];
+
+          return this.daily.map((_, index) => {
+            const currentDate = new Date('2025-07-25');
+            currentDate.setDate(currentDate.getDate() + index);
+
+            let pluginCount = 0;
+            pluginDates.forEach((plugin) => {
+              if (plugin.date <= currentDate) {
+                pluginCount++;
+              }
+            });
+
+            return pluginCount;
+          });
+        },
+
+        getPluginNameForDate: function (dateString) {
+          const pluginDates = [
+            { date: new Date('2025-07-27'), name: 'CardFlip' },
+            { date: new Date('2025-07-28'), name: 'TextFlip' },
+            { date: new Date('2025-08-29'), name: 'ChaChing' },
+            { date: new Date('2025-07-30'), name: 'HeroFlex' },
+            { date: new Date('2025-08-01'), name: 'AeroNav' },
+            { date: new Date('2025-08-02'), name: 'Themerise' },
+            { date: new Date('2025-08-03'), name: 'FeatrFlo' },
+            { date: new Date('2025-08-04'), name: 'ShowZY' },
+            { date: new Date('2025-08-05'), name: 'HelioCRM' },
+            { date: new Date('2025-08-06'), name: 'TrustBadge' },
+            { date: new Date('2025-08-08'), name: 'BaseGlow' },
+            { date: new Date('2025-08-09'), name: 'FluidNavHTML' },
+            { date: new Date('2025-08-10'), name: 'MintZoom' },
+            { date: new Date('2025-08-12'), name: 'FluidNavReact' },
+            { date: new Date('2025-08-13'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-15'), name: 'CloudSync Pro' },
+          ];
+
+          const targetDate = new Date(dateString + ', 2025');
+          const plugin = pluginDates.find(
+            (p) => p.date.toDateString() === targetDate.toDateString()
+          );
+          return plugin ? plugin.name : null;
+        },
       };
 
       function createContributionLineChart() {
@@ -795,10 +866,10 @@
         const cumulativeData = contributionData.getCumulative();
         const dateLabels = contributionData.getDateLabels();
 
-        // Detect current theme
+        const pluginsCumulativeData = contributionData.getPluginsCumulative();
+
         const isLightTheme = document.body.classList.contains('light-theme');
 
-        // Set colors based on theme
         const textColor = isLightTheme ? '#24292f' : '#c9d1d9';
         const gridColor = isLightTheme ? '#d1d5db' : '#30363d';
 
@@ -808,7 +879,7 @@
             labels: dateLabels,
             datasets: [
               {
-                label: 'Cumulative Contributions',
+                label: 'Github Contributions',
                 data: cumulativeData,
                 borderColor: '#58a6ff',
                 backgroundColor: 'rgba(88, 166, 255, 0.2)',
@@ -821,29 +892,59 @@
                 pointBorderWidth: 2,
                 borderWidth: 3,
               },
+
+              {
+                label: 'Plugins / Apps Created',
+                data: pluginsCumulativeData,
+                borderColor: '#10b981',
+                borderDash: [5, 5],
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 10,
+                pointBackgroundColor: '#10b981',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                borderWidth: 3,
+              },
             ],
           },
           options: {
             responsive: true,
-            maintainAspectRatio: false, // Allow flexible height
+            maintainAspectRatio: true,
             plugins: {
               legend: {
                 display: true,
                 labels: {
-                  color: textColor, // Use theme-aware color
+                  color: textColor,
                 },
               },
               tooltip: {
-                enabled: true,
+                mode: 'index',
+                intersect: false,
                 callbacks: {
                   label: function (context) {
                     const index = context.dataIndex;
-                    const dailyContributions = contributionData.daily[index];
-                    const cumulativeTotal = context.parsed.y;
-                    return [
-                      `Daily contributions: ${dailyContributions}`,
-                      `Total so far: ${cumulativeTotal}`,
-                    ];
+                    const datasetLabel = context.dataset.label;
+                    const currentLabel = context.chart.data.labels[index];
+
+                    if (datasetLabel === 'Plugins / Apps Created') {
+                      const pluginName =
+                        contributionData.getPluginNameForDate(currentLabel);
+                      if (pluginName) {
+                        return `🎉 Plugin / App Created: ${pluginName}`;
+                      } else {
+                        return `Plugins / Apps Created: ${context.parsed.y}`;
+                      }
+                    } else {
+                      const dailyContributions = contributionData.daily[index];
+                      const cumulativeTotal = context.parsed.y;
+                      return [
+                        `Daily contributions: ${dailyContributions}`,
+                        `Total so far: ${cumulativeTotal}`,
+                      ];
+                    }
                   },
                 },
                 backgroundColor: 'rgba(13, 17, 23, 0.95)',
@@ -854,7 +955,7 @@
                 titleFont: { size: 16, weight: 'bold' },
                 bodyFont: { size: 14, weight: 'bold' },
                 padding: 12,
-                displayColors: false,
+                displayColors: true,
                 cornerRadius: 8,
               },
             },
@@ -864,28 +965,28 @@
                 title: {
                   display: true,
                   text: 'Total Contributions',
-                  color: textColor, // Use theme-aware color
+                  color: textColor,
                   font: { size: 14, weight: 'bold' },
                 },
                 grid: {
-                  color: gridColor, // Use theme-aware grid color
+                  color: gridColor,
                 },
                 ticks: {
-                  color: textColor, // Use theme-aware color
+                  color: textColor,
                 },
               },
               x: {
                 title: {
                   display: true,
                   text: 'Date (2025)',
-                  color: textColor, // Use theme-aware color
+                  color: textColor,
                   font: { size: 14, weight: 'bold' },
                 },
                 grid: {
-                  color: gridColor, // Use theme-aware grid color
+                  color: gridColor,
                 },
                 ticks: {
-                  color: textColor, // Use theme-aware color
+                  color: textColor,
                   maxTicksLimit: 12,
                 },
               },
@@ -896,7 +997,13 @@
         const total = cumulativeData[cumulativeData.length - 1] || 0;
         document.getElementById('total-contributions').textContent = total;
       }
-
+      function refreshChart() {
+        const existingChart = Chart.getChart('contributionLineChart');
+        if (existingChart) {
+          existingChart.destroy();
+        }
+        createContributionLineChart();
+      }
       function animateCount(id, end) {
         const el = document.getElementById(id);
         if (!el) return;
@@ -1076,22 +1183,35 @@
           .join('');
 
         modalContent.innerHTML = `
-                <h3 class="text-3xl font-bold mb-2" style="color: var(--heading-color);">${data.title}</h3>
-                <span class="inline-block px-2 py-1 rounded-full font-semibold text-white text-xs" style="background-color: var(--tag-ui-bg);">${data.category}</span>
-                <p class="text-sm mt-2" style="color: var(--secondary-text-color);">${data.date}</p>
-                <img src="${data.imageSrc}" alt="Plugin demonstration" class="w-full h-auto rounded-md mt-4 shadow-lg">
-                <div class="mt-4 text-left">
-                    <p class="text-lg font-semibold" style="color: var(--heading-color);">About the Project:</p>
-                    <p class="text-[var(--text-color)]">${data.problem}</p>
-                    <p class="text-lg font-semibold mt-4" style="color: var(--heading-color);">What did I arm myself with?</p>
-                    <div class="flex flex-wrap gap-2 mt-2">
-                        ${techStackHtml}
-                    </div>
-                    <a href="${data.link}" target="_blank" class="mt-6 inline-block font-semibold text-xl hover:underline glow-hover" style="color: var(--link-color);">
-                        Check it out here »
-                    </a>
-                </div>
-            `;
+                      <h3 class="text-3xl font-bold mb-2" style="color: var(--heading-color);">${
+                        data.title
+                      }</h3>
+                      <span class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2"
+                        style="background-color: ${getCategoryColor(
+                          data.category
+                        )}">${data.category}</span>
+                      <p class="text-sm mt-2" style="color: var(--secondary-text-color);">${
+                        data.date
+                      }</p>
+                      <img src="${
+                        data.imageSrc
+                      }" alt="Plugin demonstration" class="w-full h-auto rounded-md mt-4 shadow-lg">
+                      <div class="mt-4 text-left">
+                          <p class="text-lg font-semibold" style="color: var(--heading-color);">About the Project:</p>
+                          <p class="text-[var(--text-color)]">${
+                            data.problem
+                          }</p>
+                          <p class="text-lg font-semibold mt-4" style="color: var(--heading-color);">What did I arm myself with?</p>
+                          <div class="flex flex-wrap gap-2 mt-2">
+                              ${techStackHtml}
+                          </div>
+                          <a href="${
+                            data.link
+                          }" target="_blank" class="mt-6 inline-block font-semibold text-xl hover:underline glow-hover" style="color: var(--link-color);">
+                              Check it out here »
+                          </a>
+                      </div>
+                  `;
 
         document.getElementById('modal-overlay').style.display = 'flex';
         setTimeout(() => {
@@ -1109,26 +1229,25 @@
         const timelineContainer = document.querySelector(
           '.timeline-horizontal'
         );
-        timelineContainer.innerHTML = ''; // Clear existing events
+        timelineContainer.innerHTML = '';
 
         Object.entries(pluginData).forEach(([eventId, data]) => {
           const eventDiv = document.createElement('div');
           eventDiv.className = 'timeline-event';
           eventDiv.onclick = () => openModal(eventId);
 
-          // Single container structure - no nested divs
           eventDiv.innerHTML = `
-            <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">${
-              data.title
-            }</h3>
-            <span class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2" 
-                  style="background-color: ${getCategoryColor(
-                    data.category
-                  )}">${data.category}</span>
-            <p class="text-sm text-[var(--text-color)] italic">${
-              data.problem
-            }</p>
-        `;
+                  <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">${
+                    data.title
+                  }</h3>
+                  <span class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2"
+                        style="background-color: ${getCategoryColor(
+                          data.category
+                        )}">${data.category}</span>
+                  <p class="text-sm text-[var(--text-color)] italic">${
+                    data.problem
+                  }</p>
+              `;
 
           timelineContainer.appendChild(eventDiv);
         });
@@ -1189,6 +1308,7 @@
           sunIcon.classList.add('hidden');
           moonIcon.classList.remove('hidden');
         }
+        setTimeout(() => refreshChart(), 100);
       });
 
       window.addEventListener('DOMContentLoaded', () => {
