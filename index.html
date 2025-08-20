@@ -778,7 +778,7 @@
 
       const contributionData = {
         daily: [
-          5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 9,
+          5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 11, 6, 2, 6, 8, 12,
         ],
         getCumulative: function () {
           let sum = 0;
@@ -800,7 +800,7 @@
           const pluginDates = [
             { date: new Date('2025-07-27'), name: 'CardFlip' },
             { date: new Date('2025-07-28'), name: 'TextFlip' },
-            { date: new Date('2025-08-29'), name: 'ChaChing' },
+            { date: new Date('2025-08-29'), name: 'CostCompass' },
             { date: new Date('2025-07-30'), name: 'HeroFlex' },
             { date: new Date('2025-08-01'), name: 'AeroNav' },
             { date: new Date('2025-08-02'), name: 'Themerise' },
@@ -808,12 +808,20 @@
             { date: new Date('2025-08-04'), name: 'ShowZY' },
             { date: new Date('2025-08-05'), name: 'HelioCRM' },
             { date: new Date('2025-08-06'), name: 'TrustBadge' },
+            { date: new Date('2025-08-07'), name: 'SprintSense' },
             { date: new Date('2025-08-08'), name: 'BaseGlow' },
             { date: new Date('2025-08-09'), name: 'FluidNavHTML' },
             { date: new Date('2025-08-10'), name: 'MintZoom' },
+            { date: new Date('2025-08-11'), name: 'ImpactEngine' },
             { date: new Date('2025-08-12'), name: 'FluidNavReact' },
             { date: new Date('2025-08-13'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-14'), name: 'OpsOptimizer' },
             { date: new Date('2025-08-15'), name: 'CloudSync Pro' },
+            { date: new Date('2025-08-16'), name: 'CancelShield' },
+            { date: new Date('2025-08-17'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-18'), name: 'TrustBadge' },
+            { date: new Date('2025-08-19'), name: 'FutureCast' },
+            { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
           ];
 
           return this.daily.map((_, index) => {
@@ -835,7 +843,7 @@
           const pluginDates = [
             { date: new Date('2025-07-27'), name: 'CardFlip' },
             { date: new Date('2025-07-28'), name: 'TextFlip' },
-            { date: new Date('2025-08-29'), name: 'ChaChing' },
+            { date: new Date('2025-08-29'), name: 'CostCompass' },
             { date: new Date('2025-07-30'), name: 'HeroFlex' },
             { date: new Date('2025-08-01'), name: 'AeroNav' },
             { date: new Date('2025-08-02'), name: 'Themerise' },
@@ -843,12 +851,20 @@
             { date: new Date('2025-08-04'), name: 'ShowZY' },
             { date: new Date('2025-08-05'), name: 'HelioCRM' },
             { date: new Date('2025-08-06'), name: 'TrustBadge' },
+            { date: new Date('2025-08-07'), name: 'SprintSense' },
             { date: new Date('2025-08-08'), name: 'BaseGlow' },
             { date: new Date('2025-08-09'), name: 'FluidNavHTML' },
             { date: new Date('2025-08-10'), name: 'MintZoom' },
+            { date: new Date('2025-08-11'), name: 'ImpactEngine' },
             { date: new Date('2025-08-12'), name: 'FluidNavReact' },
             { date: new Date('2025-08-13'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-14'), name: 'OpsOptimizer' },
             { date: new Date('2025-08-15'), name: 'CloudSync Pro' },
+            { date: new Date('2025-08-16'), name: 'CancelShield' },
+            { date: new Date('2025-08-17'), name: 'TurnTable3D' },
+            { date: new Date('2025-08-18'), name: 'TrustBadge' },
+            { date: new Date('2025-08-19'), name: 'FutureCast' },
+            { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
           ];
 
           const targetDate = new Date(dateString + ', 2025');
@@ -1313,8 +1329,8 @@
 
       window.addEventListener('DOMContentLoaded', () => {
         createContributionLineChart();
-        setTimeout(() => animateCount('contrib-counter', 124), 500);
-        setTimeout(() => animateCount('plugin-counter', 20), 700);
+        setTimeout(() => animateCount('contrib-counter', 160), 500);
+        setTimeout(() => animateCount('plugin-counter', 22), 700);
         addTiltEffect('.timeline-event > div');
         renderTimelineFromData();
         setupScrollAnimations();
