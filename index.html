@@ -5,10 +5,10 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' transform='translate(5, 0)'>U</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' transform='translate(5, 0)'>🌱</text></svg>"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unilomio Journey Showcase</title>
+    <title>Github Showcase - Rashika</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -511,6 +511,10 @@
               Plugins / Apps Created
             </p>
           </div>
+          <div class="text-center">
+            <div id="repo-counter" class="stats-counter">0</div>
+            <p class="text-[var(--secondary-text-color)]">Respos</p>
+          </div>
         </div>
       </section>
 
@@ -778,7 +782,8 @@
 
       const contributionData = {
         daily: [
-          5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 11, 6, 2, 6, 8, 12,
+          5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 11,
+          6, 2, 6, 8, 15, 6, 4, 4, 0,
         ],
         getCumulative: function () {
           let sum = 0;
@@ -822,6 +827,8 @@
             { date: new Date('2025-08-18'), name: 'TrustBadge' },
             { date: new Date('2025-08-19'), name: 'FutureCast' },
             { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
+            { date: new Date('2025-08-21'), name: 'Unical' },
+            { date: new Date('2025-08-23'), name: 'Unilinky' },
           ];
 
           return this.daily.map((_, index) => {
@@ -865,6 +872,8 @@
             { date: new Date('2025-08-18'), name: 'TrustBadge' },
             { date: new Date('2025-08-19'), name: 'FutureCast' },
             { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
+            { date: new Date('2025-08-21'), name: 'Unical' },
+            { date: new Date('2025-08-23'), name: 'Unilinky' },
           ];
 
           const targetDate = new Date(dateString + ', 2025');
@@ -1329,7 +1338,9 @@
 
       window.addEventListener('DOMContentLoaded', () => {
         createContributionLineChart();
-        setTimeout(() => animateCount('contrib-counter', 160), 500);
+        setTimeout(() => animateCount('contrib-counter', 177), 500);
+        setTimeout(() => animateCount('plugin-counter', 22), 700);
+        setTimeout(() => animateCount('repo-counter', 67), 500);
         setTimeout(() => animateCount('plugin-counter', 22), 700);
         addTiltEffect('.timeline-event > div');
         renderTimelineFromData();
