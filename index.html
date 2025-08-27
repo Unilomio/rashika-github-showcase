@@ -422,17 +422,27 @@
         <a
           href="#hero"
           class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >Home</a
+          >🏠︎</a
         >
         <a
           href="#journey"
           class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >Journey</a
+          >⛳</a
         >
         <a
           href="#about"
           class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >About</a
+          >📜</a
+        >
+        <a
+          href="https://unilomio.in"
+          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
+          >🌐</a
+        >
+        <a
+          href="https://portfolio.unilomio.in"
+          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
+          >🛠️</a
         >
         <button
           id="theme-toggle"
@@ -737,7 +747,7 @@
           imageSrc:
             'https://res.cloudinary.com/dekw8psuo/image/upload/v1755261689/UniliomioApp-Github-01_x5hkjb.png',
           problem:
-            'July 2025 saw the dawn of my mission to create Unilomio App, a registry of zero-bloat plugins. Adding beauty, value, and profit to web applications at super-affordable costs, is the core motivation behind the Unilomio project. Unilomio App has 12 plugins live now, with six more under development and testing. The end result is to have 100 plugins across five categories.',
+            'July 2025 saw the dawn of my mission to create Unilomio App, a registry of zero-bloat plugins. Adding beauty, value, and profit to web applications at super-affordable costs, is the core motivation behind the Unilomio project. Unilomio App has 27 plugins live now, with six more under development and testing. The goal is to have 100 plugins across four categories in 2025.',
           techStack: [
             'Node.js',
             'React Javascript',
@@ -783,7 +793,7 @@
       const contributionData = {
         daily: [
           5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 11,
-          6, 2, 6, 8, 15, 6, 4, 4, 0,
+          6, 2, 6, 8, 15, 6, 4, 4, 15, 0, 0, 4,
         ],
         getCumulative: function () {
           let sum = 0;
@@ -829,6 +839,8 @@
             { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
             { date: new Date('2025-08-21'), name: 'Unical' },
             { date: new Date('2025-08-23'), name: 'Unilinky' },
+            { date: new Date('2025-08-24'), name: 'FounderFlow' },
+            { date: new Date('2025-08-26'), name: 'DemoDrop' },
           ];
 
           return this.daily.map((_, index) => {
@@ -874,6 +886,8 @@
             { date: new Date('2025-08-20'), name: 'LoyaltyLink' },
             { date: new Date('2025-08-21'), name: 'Unical' },
             { date: new Date('2025-08-23'), name: 'Unilinky' },
+            { date: new Date('2025-08-24'), name: 'FounderFlow' },
+            { date: new Date('2025-08-26'), name: 'DemoDrop' },
           ];
 
           const targetDate = new Date(dateString + ', 2025');
@@ -1338,10 +1352,10 @@
 
       window.addEventListener('DOMContentLoaded', () => {
         createContributionLineChart();
-        setTimeout(() => animateCount('contrib-counter', 177), 500);
-        setTimeout(() => animateCount('plugin-counter', 22), 700);
-        setTimeout(() => animateCount('repo-counter', 67), 500);
-        setTimeout(() => animateCount('plugin-counter', 22), 700);
+        setTimeout(() => animateCount('contrib-counter', 196), 500);
+        setTimeout(() => animateCount('plugin-counter', 29), 700);
+        setTimeout(() => animateCount('repo-counter', 76), 500);
+        setTimeout(() => animateCount('plugin-counter', 29), 700);
         addTiltEffect('.timeline-event > div');
         renderTimelineFromData();
         setupScrollAnimations();
