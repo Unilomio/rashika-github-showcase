@@ -29,6 +29,7 @@
         --tag-ui-bg: #58a6ff;
         --tag-monetization-bg: #2d8f2d;
         --tag-tech-bg: #a855f7;
+        --tag-quirkity-bg: #80ff00;
       }
 
       body.light-theme {
@@ -46,6 +47,7 @@
         --tag-ui-bg: #2563eb;
         --tag-monetization-bg: #10b981;
         --tag-tech-bg: #9333ea;
+        --tag-quirkity-bg: #80ff00;
       }
 
       #hero {
@@ -508,22 +510,24 @@
           Explore the Journey
         </a>
 
-        <div class="flex gap-8 mt-8 fade-in-right">
-          <div class="text-center">
-            <div id="contrib-counter" class="stats-counter">0</div>
-            <p class="text-[var(--secondary-text-color)]">
-              GitHub Contributions
-            </p>
-          </div>
-          <div class="text-center">
-            <div id="plugin-counter" class="stats-counter">0</div>
-            <p class="text-[var(--secondary-text-color)]">
-              Plugins / Apps Created
-            </p>
-          </div>
-          <div class="text-center">
-            <div id="repo-counter" class="stats-counter">0</div>
-            <p class="text-[var(--secondary-text-color)]">Respos</p>
+        <div class="flex justify-center w-full mt-8 fade-in-right">
+          <div class="flex gap-8 justify-center max-w-2xl mx-auto">
+            <div class="text-center">
+              <div id="contrib-counter" class="stats-counter">0</div>
+              <p class="text-[var(--secondary-text-color)]">
+                GitHub Contributions
+              </p>
+            </div>
+            <div class="text-center">
+              <div id="repo-counter" class="stats-counter">0</div>
+              <p class="text-[var(--secondary-text-color)]">Repos</p>
+            </div>
+            <div class="text-center">
+              <div id="plugin-counter" class="stats-counter">0</div>
+              <p class="text-[var(--secondary-text-color)]">
+                Plugins/Apps Created
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -760,6 +764,25 @@
           link: 'https://app.unilomio.in',
         },
         'event-2': {
+          title: 'ChaChing.js by Rashika',
+          category: 'Plugin Registry',
+          date: 'August 2, 2025',
+          imageSrc:
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1755583208/809f10a7-03cd-4ebe-8920-ae21fd02c727.png',
+          problem:
+            'ChaChing.js is a bunch of seven nifty zero-bloat plugins that you can plug into your SaaS or landing page. The ChaChing.js suite comes with plugins that can help you show how your product or service adds real value to your customers, investors, buyers, and subscribers.',
+          techStack: [
+            'Node.js',
+            'React Javascript',
+            'React Typescript',
+            'HTML5',
+            'CSS3',
+            'Firebase',
+            'Vision & Commitment',
+          ],
+          link: 'https://www.youtube.com/@Unilomio',
+        },
+        'event-3': {
           title: 'HelioCRM',
           category: 'CRM',
           date: 'August 5, 2025',
@@ -777,7 +800,40 @@
           ],
           link: 'https://heliocrm.unilomio.in',
         },
-        'event-3': {
+        'event-4': {
+          title: 'Quirkity',
+          category: 'Quirkity',
+          date: 'August 10, 2025',
+          imageSrc:
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1756441321/f843ed09-b7f8-461f-9a51-01793c9f5cdb.png',
+          problem:
+            'Moved from being a freelancer to launching my one-person digital assets agency, Quirkity. I help folks with blazing fast no-bloat landing pages, websites, and MVP prototypes. 48-hour turn-arounds.',
+          techStack: ['React Typescript', 'Tailwind'],
+          link: 'https://quirkity.unilomio.in/',
+        },
+        'event-5': {
+          title: 'Unical',
+          category: 'Tech',
+          date: 'August 18, 2025',
+          imageSrc:
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1756440584/f38bb0a4-f0a6-4036-bd16-39a0a9f7c1ca.png',
+          problem:
+            'Unical is a free appointment scheduler that I coded to act as the front face for our Google calendars. Anyone can take my Unical code, fork it, replace the demo Google Calendar ID and API with theirs, and they are good to go.',
+          techStack: ['React Typescript', 'Tailwind'],
+          link: 'https://github.com/Unilomio/unical-dep1-24082025',
+        },
+        'event-6': {
+          title: 'Unilinky',
+          category: 'Tech',
+          date: 'August 20, 2025',
+          imageSrc:
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1756440732/b45ff4fd-283b-40bc-8377-927ab8e63d7a.png',
+          problem:
+            'Unilinky is a free no-bloat link-in-bio that I coded. I wanted financially struggling founders such as myself to be able to create good-looking biocards and biolink lists, without having to worry about premium tool costs. I have created two versions of Unilinky, one in HTML and in React JS.',
+          techStack: ['React Typescript', 'HTML', 'Tailwind'],
+          link: 'https://github.com/stars/Unilomio/lists/unilinky',
+        },
+        'event-7': {
           title: 'CloudSync Pro',
           category: 'Quirkity',
           date: 'August 15, 2025',
@@ -933,7 +989,7 @@
               },
 
               {
-                label: 'Plugins / Apps Created',
+                label: 'Plugins/Apps Created',
                 data: pluginsCumulativeData,
                 borderColor: '#10b981',
                 borderDash: [5, 5],
@@ -968,13 +1024,13 @@
                     const datasetLabel = context.dataset.label;
                     const currentLabel = context.chart.data.labels[index];
 
-                    if (datasetLabel === 'Plugins / Apps Created') {
+                    if (datasetLabel === 'Plugins/Apps Created') {
                       const pluginName =
                         contributionData.getPluginNameForDate(currentLabel);
                       if (pluginName) {
                         return `🎉 Plugin / App Created: ${pluginName}`;
                       } else {
-                        return `Plugins / Apps Created: ${context.parsed.y}`;
+                        return `Plugins/Apps Created: ${context.parsed.y}`;
                       }
                     } else {
                       const dailyContributions = contributionData.daily[index];
@@ -1279,7 +1335,7 @@
                   <h3 class="text-xl font-bold text-[var(--heading-color)] mb-2">${
                     data.title
                   }</h3>
-                  <span class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-white mb-2"
+                  <span class="inline-block px-2 py-1 rounded-full text-xs font-semibold text-slate-950 mb-2"
                         style="background-color: ${getCategoryColor(
                           data.category
                         )}">${data.category}</span>
@@ -1296,7 +1352,7 @@
         const colors = {
           'Plugin Registry': 'var(--tag-monetization-bg)',
           CRM: 'var(--tag-ui-bg)',
-          Quirkity: 'var(--tag-monetization-bg)',
+          Quirkity: 'var(--tag-quirkity-bg)',
           Tech: 'var(--tag-tech-bg)',
         };
         return colors[category] || 'var(--tag-ui-bg)';
@@ -1352,9 +1408,9 @@
 
       window.addEventListener('DOMContentLoaded', () => {
         createContributionLineChart();
-        setTimeout(() => animateCount('contrib-counter', 196), 500);
+        setTimeout(() => animateCount('contrib-counter', 205), 500);
         setTimeout(() => animateCount('plugin-counter', 29), 700);
-        setTimeout(() => animateCount('repo-counter', 76), 500);
+        setTimeout(() => animateCount('repo-counter', 80), 500);
         setTimeout(() => animateCount('plugin-counter', 29), 700);
         addTiltEffect('.timeline-event > div');
         renderTimelineFromData();
