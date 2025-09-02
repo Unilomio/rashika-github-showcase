@@ -416,44 +416,315 @@
           -webkit-line-clamp: 3;
         }
       }
+      /* Add this to your existing CSS */
+      .glow-hover {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: left 0.5s ease;
+        z-index: 1;
+      }
+
+      .glow-hover:hover::before {
+        left: 100%;
+      }
+
+      /* For your navigation buttons */
+      .glow-on-click {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-on-click::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(253, 230, 138, 0.6),
+          transparent
+        );
+        transform: skew(-25deg);
+        transition: left 0.6s ease;
+      }
+
+      .glow-on-click:hover::before {
+        left: calc(100% + 50px);
+      }
+      /* Navigation pill styles */
+      .nav-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        min-width: 70px;
+        text-align: center;
+      }
+
+      /* Light theme pills */
+      body.light-theme .nav-pill {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+      }
+
+      /* Hover effects */
+      .nav-pill:hover {
+        background: var(--heading-color);
+        color: white;
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);
+        border-color: var(--heading-color);
+      }
+
+      /* Active/Click effect */
+      .nav-pill:active {
+        transform: translateY(0) scale(0.98);
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+      }
+
+      /* Shimmer effect for pills */
+      .nav-pill::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        transform: skew(-25deg);
+        transition: left 0.6s ease;
+      }
+
+      .nav-pill:hover::before {
+        left: calc(100% + 50px);
+      }
+
+      /* Special styling for theme toggle pill */
+      .theme-toggle-pill {
+        min-width: 50px;
+        padding: 8px;
+      }
+
+      .theme-toggle-pill svg {
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle-pill:hover svg {
+        transform: rotate(180deg);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-pill {
+          font-size: 0.8rem;
+          padding: 6px 12px;
+          min-width: 60px;
+        }
+
+        nav {
+          space-x: 2;
+        }
+
+        .theme-toggle-pill {
+          min-width: 40px;
+          padding: 6px;
+        }
+      }
+
+      /* Active page indicator (optional) */
+      .nav-pill.active {
+        background: var(--heading-color);
+        color: white;
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
+      }
+      /* Sticky footer pill container */
+      .sticky-footer-pill {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 40;
+        pointer-events: none; /* Allow clicking through the container */
+      }
+
+      /* Footer pill styling */
+      .footer-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        pointer-events: auto; /* Re-enable pointer events for the pill itself */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        max-width: 90vw;
+        text-align: center;
+      }
+
+      /* Light theme footer pill */
+      body.light-theme .footer-pill {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hover effects */
+      .footer-pill:hover {
+        background: var(--heading-color);
+        color: white;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 40px rgba(88, 166, 255, 0.4);
+        border-color: var(--heading-color);
+      }
+
+      /* Active/Click effect */
+      .footer-pill:active {
+        transform: translateY(-1px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(88, 166, 255, 0.3);
+      }
+
+      /* Shimmer effect for footer pill */
+      .footer-pill::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        transform: skew(-25deg);
+        transition: left 0.8s ease;
+      }
+
+      .footer-pill:hover::before {
+        left: calc(100% + 100px);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .sticky-footer-pill {
+          bottom: 15px;
+        }
+
+        .footer-pill {
+          font-size: 0.9rem;
+          padding: 10px 20px;
+          border-radius: 25px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-pill {
+          font-size: 0.8rem;
+          padding: 8px 16px;
+        }
+      }
+
+      /* Smooth entrance animation */
+      .footer-pill {
+        animation: slideUpFade 0.6s ease-out 0.5s both;
+      }
+
+      @keyframes slideUpFade {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Optional: Hide on scroll up, show on scroll down */
+      .sticky-footer-pill.hidden {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <body>
     <header class="glassy-nav fixed top-0 w-full z-50 p-4 shadow-lg">
-      <nav class="flex justify-center items-center space-x-6">
-        <a
-          href="#hero"
-          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >🏠︎</a
-        >
-        <a
-          href="#journey"
-          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >⛳</a
-        >
-        <a
-          href="#about"
-          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >📜</a
-        >
+      <nav class="flex justify-center items-center space-x-4">
+        <a href="#hero" class="nav-pill shimmer-button">Home</a>
+        <a href="#journey" class="nav-pill shimmer-button">Journey</a>
+        <a href="#about" class="nav-pill shimmer-button">About</a>
         <a
           href="https://unilomio.in"
-          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >🌐</a
+          target="_blank"
+          rel="noopener"
+          class="nav-pill shimmer-button"
+          >Hub</a
         >
         <a
           href="https://portfolio.unilomio.in"
-          class="text-xl font-bold hover:text-[var(--heading-color)] transition-colors"
-          >🛠️</a
+          target="_blank"
+          rel="noopener"
+          class="nav-pill shimmer-button"
+          >Portfolio</a
         >
         <button
           id="theme-toggle"
-          class="p-2 rounded-full hover:bg-[var(--card-bg-color)] transition-colors"
+          class="nav-pill shimmer-button theme-toggle-pill"
         >
           <svg
             id="sun-icon"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 text-yellow-500"
+            class="h-4 w-4 text-yellow-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -468,7 +739,7 @@
           <svg
             id="moon-icon"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 text-[var(--heading-color)] hidden"
+            class="h-4 w-4 text-[var(--heading-color)] hidden"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -718,16 +989,15 @@
       </section>
     </main>
 
-    <footer
-      class="text-center py-6 border-t mt-12"
-      style="
-        background-color: var(--bg-color);
-        border-color: var(--border-color);
-      "
-    >
-      <p class="text-sm text-[var(--secondary-text-color)]">
-        Built with ❤️ by Rashika | Unilomio
-      </p>
+    <footer class="sticky-footer-pill">
+      <a
+        href="https://main.unilomio.in"
+        target="_blank"
+        rel="noopener"
+        class="footer-pill shimmer-button"
+      >
+        Built with ❤️ by Rashika
+      </a>
     </footer>
 
     <div id="modal-overlay" class="modal-overlay">
@@ -834,6 +1104,17 @@
           link: 'https://github.com/stars/Unilomio/lists/unilinky',
         },
         'event-7': {
+          title: 'Casheet.ly',
+          category: 'Founder Tools',
+          date: 'August 31, 2025',
+          imageSrc:
+            'https://res.cloudinary.com/dekw8psuo/image/upload/v1756813380/39c93bc9-3c95-4465-817d-142a54c8f48f.png',
+          problem:
+            'Zero-bloat finance tracking tool for people who value their time and privacy. Built for busy founders and freelancers. Secure expense tracking, investment monitoring, and cash flow insights. Your data stays yours, always. Beautiful interface, Google-powered security, complete data ownership. ',
+          techStack: ['HTML', 'CSS', 'Javascript', 'CSS', 'Tailwind'],
+          link: 'https://casheetly.unilomio.in/',
+        },
+        'event-8': {
           title: 'CloudSync Pro',
           category: 'Quirkity',
           date: 'August 15, 2025',
@@ -849,7 +1130,7 @@
       const contributionData = {
         daily: [
           5, 0, 0, 9, 5, 7, 17, 8, 3, 0, 0, 0, 6, 7, 4, 9, 17, 13, 5, 0, 0, 11,
-          6, 2, 6, 8, 15, 6, 4, 4, 15, 0, 0, 5, 4, 5,
+          6, 2, 6, 8, 15, 6, 4, 4, 15, 0, 0, 5, 4, 12, 30, 0, 0, 12,
         ],
         getCumulative: function () {
           let sum = 0;
@@ -871,7 +1152,7 @@
           const pluginDates = [
             { date: new Date('2025-07-27'), name: 'CardFlip' },
             { date: new Date('2025-07-28'), name: 'TextFlip' },
-            { date: new Date('2025-08-29'), name: 'CostCompass' },
+            { date: new Date('2025-07-29'), name: 'CostCompass' },
             { date: new Date('2025-07-30'), name: 'HeroFlex' },
             { date: new Date('2025-08-01'), name: 'AeroNav' },
             { date: new Date('2025-08-02'), name: 'Themerise' },
@@ -897,6 +1178,8 @@
             { date: new Date('2025-08-23'), name: 'Unilinky' },
             { date: new Date('2025-08-24'), name: 'FounderFlow' },
             { date: new Date('2025-08-26'), name: 'DemoDrop' },
+            { date: new Date('2025-08-31'), name: 'Casheetly' },
+            { date: new Date('2025-09-01'), name: 'AuraFlow' },
           ];
 
           return this.daily.map((_, index) => {
@@ -918,7 +1201,7 @@
           const pluginDates = [
             { date: new Date('2025-07-27'), name: 'CardFlip' },
             { date: new Date('2025-07-28'), name: 'TextFlip' },
-            { date: new Date('2025-08-29'), name: 'CostCompass' },
+            { date: new Date('2025-07-29'), name: 'CostCompass' },
             { date: new Date('2025-07-30'), name: 'HeroFlex' },
             { date: new Date('2025-08-01'), name: 'AeroNav' },
             { date: new Date('2025-08-02'), name: 'Themerise' },
@@ -944,6 +1227,8 @@
             { date: new Date('2025-08-23'), name: 'Unilinky' },
             { date: new Date('2025-08-24'), name: 'FounderFlow' },
             { date: new Date('2025-08-26'), name: 'DemoDrop' },
+            { date: new Date('2025-08-31'), name: 'Casheetly' },
+            { date: new Date('2025-09-01'), name: 'AuraFlow' },
           ];
 
           const targetDate = new Date(dateString + ', 2025');
@@ -1351,7 +1636,7 @@
       function getCategoryColor(category) {
         const colors = {
           'Plugin Registry': 'var(--tag-monetization-bg)',
-          CRM: 'var(--tag-ui-bg)',
+          'Founder Tools': 'var(--tag-ui-bg)',
           Quirkity: 'var(--tag-quirkity-bg)',
           Tech: 'var(--tag-tech-bg)',
         };
@@ -1408,10 +1693,10 @@
 
       window.addEventListener('DOMContentLoaded', () => {
         createContributionLineChart();
-        setTimeout(() => animateCount('contrib-counter', 205), 500);
-        setTimeout(() => animateCount('plugin-counter', 29), 700);
-        setTimeout(() => animateCount('repo-counter', 80), 500);
-        setTimeout(() => animateCount('plugin-counter', 29), 700);
+        setTimeout(() => animateCount('contrib-counter', 255), 500);
+        setTimeout(() => animateCount('plugin-counter', 31), 700);
+        setTimeout(() => animateCount('repo-counter', 90), 500);
+        setTimeout(() => animateCount('plugin-counter', 31), 700);
         addTiltEffect('.timeline-event > div');
         renderTimelineFromData();
         setupScrollAnimations();
